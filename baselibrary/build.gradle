@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+    }
+
+    //arouter
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api rootProject.ext.appcompatDeps
+    api rootProject.ext.baseRecyclerviewDeps
+    api rootProject.ext.recyclerviewDeps
+    api rootProject.ext.cardviewDeps
+    api rootProject.ext.designDeps
+    api rootProject.ext.ultraDeps
+    api rootProject.ext.constraintDeps
+
+    //路由库
+    api project(':module_route')
+
+    //arouter
+//    api 'com.alibaba:arouter-api:1.2.4'
+
+    //arouter
+//    api rootProject.ext.arouterDeps
+//    api rootProject.ext.arouterAnnoDeps
+}

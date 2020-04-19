@@ -1,0 +1,1 @@
+include ':app', ':baselibrary', ':module_route', ':module_main', ':module_home', ':module_mine'

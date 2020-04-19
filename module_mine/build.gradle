@@ -1,0 +1,56 @@
+if (!isModule.toBoolean()) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
+
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+
+    defaultConfig {
+        if (isModule.toBoolean()) {
+            applicationId 'com.example.module_mine'
+        }
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+
+        sourceSets {
+            main {
+                if (!isModule.toBoolean()) {
+                    manifest.srcFile 'src/main/buildModule/AndroidManifest.xml'
+                } else {
+                    manifest.srcFile 'src/main/buildApp/AndroidManifest.xml'
+                }
+            }
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':baselibrary')
+
+    //arouter
+    annotationProcessor rootProject.ext.arouterAnnoDeps
+    implementation rootProject.ext.arouterDeps
+}

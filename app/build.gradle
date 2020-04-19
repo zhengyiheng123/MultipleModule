@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.versions.applicationId
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        versionCode rootProject.ext.versions.versionCode
+        versionName rootProject.ext.versions.versionName
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //databinding
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    testImplementation 'junit:junit:4.12'
+
+    implementation project(':baselibrary')
+    if (!isModule.toBoolean()) {
+        println("===================模块")
+        //首页
+        implementation project(':module_home')
+        //登录、闪屏页
+        implementation project(':module_main')
+        //我的页面
+        implementation project(':module_mine')
+    } else {
+        //基础库
+        println("=======================基础库")
+    }
+
+    //arouter
+    annotationProcessor rootProject.ext.arouterAnnoDeps
+    implementation rootProject.ext.arouterDeps
+}

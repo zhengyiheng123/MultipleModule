@@ -1,0 +1,123 @@
+ext {
+    versions = [
+            applicationId           : 'com.example.multiplemodule',
+
+            compileSdkVersion       : 28,
+
+            buildToolsVersion       : "28.0.3",
+
+            minSdkVersion           : 17,
+
+            targetSdkVersion        : 26,
+
+            versionCode             : 1,
+
+            versionName             : "1.0.0",
+
+            butterknife_version     : "8.0.1",
+
+            arouter_compiler_version: "1.1.4",
+
+            supportVersion          : "28.0.0",
+
+            release                 : false,
+
+            arouter                 : "1.2.4"
+    ]
+
+    //v7包
+    appcompatLibs = [
+            appcompat_v7: "com.android.support:appcompat-v7:$versions.supportVersion"
+    ]
+    appcompatDeps = [
+            appcompatLibs.values()
+    ]
+
+    //BaseQuickAdapter
+    baseRecyclerviewLib = [
+            base_recyclerview: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.26'
+    ]
+    baseRecyclerviewDeps = [
+            baseRecyclerviewLib.values()
+    ]
+
+    //下拉刷新
+    ultraLib = [
+            ultra_ptr: 'in.srain.cube:ultra-ptr:1.0.11'
+    ]
+    ultraDeps = [
+            ultraLib.values()
+    ]
+
+    //leakcanary
+    leakcanaryAndroidLib = [
+            leakcanary_android: 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    ]
+    leakcanaryAndroidDeps = [
+            leakcanaryAndroidLib.values()
+    ]
+
+    leakcanaryAndroidNoLib = [
+            leakcanary_no: 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    ]
+    leakcanaryAndroidNoDeps = [
+            leakcanaryAndroidNoLib.values()
+    ]
+
+    //multidex
+    multidexLib = [
+            multidex: 'com.android.support:multidex:1.0.3'
+    ]
+    multidexDeps = [
+            multidexLib.values()
+    ]
+
+    //RecycleView
+    recyclerviewLib = [
+            recyclerview_v7: "com.android.support:recyclerview-v7:$versions.supportVersion",
+    ]
+    recyclerviewDeps = [
+            recyclerviewLib.values()
+    ]
+
+    //CardView
+    cardviewLib = [
+            cardview_v7: "com.android.support:cardview-v7:$versions.supportVersion",
+    ]
+    cardviewDeps = [
+            cardviewLib.values()
+    ]
+
+    //ConstraintLayout
+    constraintLib = [
+            constraint: 'com.android.support.constraint:constraint-layout:1.1.3'
+    ]
+    constraintDeps = [
+            constraintLib.values()
+    ]
+
+    //Design包
+    designLib = [
+            design: "com.android.support:design:$versions.supportVersion"
+    ]
+    designDeps = [
+            designLib.values()
+    ]
+
+    //arouter
+    arouterLib = [
+            arouter: "com.alibaba:arouter-api:1.2.4"
+    ]
+
+    arouterDeps = [
+            arouterLib.values()
+    ]
+
+    arouterAnnotationProcessor = [
+            arouterAnnotationProcessor: "com.alibaba:arouter-compiler:1.1.4"
+    ]
+
+    arouterAnnoDeps = [
+            arouterAnnotationProcessor.values()
+    ]
+}
