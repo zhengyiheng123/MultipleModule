@@ -37,10 +37,15 @@ dependencies {
     //路由库
     api project(':module_route')
 
-    //arouter
-//    api 'com.alibaba:arouter-api:1.2.4'
-
-    //arouter
-//    api rootProject.ext.arouterDeps
-//    api rootProject.ext.arouterAnnoDeps
+    //rxjava
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'io.reactivex.rxjava2:rxjava:2.0.1'
+    //retrofit
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    //Gson converter
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //okhttp
+    api 'com.squareup.okhttp3:okhttp:3.6.0'
+    api 'com.squareup.okio:okio:1.5.0'
 }

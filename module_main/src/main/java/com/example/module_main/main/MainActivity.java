@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.example.baselibrary.BaseApplication;
 import com.example.baselibrary.base.BasePresenter;
 import com.example.baselibrary.common.BaseCommonDataBindingActivity;
 import com.example.baselibrary.common.BaseCommonDataBindingFragment;
@@ -41,6 +42,7 @@ public class MainActivity extends BaseCommonDataBindingActivity<ActivityMainBind
     @Override
     protected void initViewsAndEvents() {
         initFragments();
+        BaseApplication.getContext().getDialogManager().showDialog(MainActivity.this);
     }
 
     @Override

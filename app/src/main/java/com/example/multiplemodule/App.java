@@ -2,17 +2,22 @@ package com.example.multiplemodule;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.example.baselibrary.BaseApplication;
+import com.example.baselibrary.manager.DialogManager;
 
 /**
  * Created by zyh
  * on 2020/4/19
  */
 public class App extends BaseApplication {
+
     @Override
     public void onCreate() {
         super.onCreate();
         initArouter();
+
     }
+
+
 
     //Arouter
     private void initArouter() {
