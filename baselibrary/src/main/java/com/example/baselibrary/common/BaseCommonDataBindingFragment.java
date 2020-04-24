@@ -1,6 +1,6 @@
 package com.example.baselibrary.common;
 
-import android.databinding.ViewDataBinding;
+import androidx.databinding.ViewDataBinding;
 import android.view.Gravity;
 import android.view.View;
 

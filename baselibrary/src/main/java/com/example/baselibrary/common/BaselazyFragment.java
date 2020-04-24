@@ -1,10 +1,9 @@
 package com.example.baselibrary.common;
 
-import android.databinding.ViewDataBinding;
+import androidx.databinding.ViewDataBinding;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.annotation.UiThread;
-import android.view.View;
+import androidx.annotation.Nullable;
+import androidx.annotation.UiThread;
 
 import com.example.baselibrary.base.BasePresenter;
 

@@ -35,7 +35,7 @@ ext {
 
     //BaseQuickAdapter
     baseRecyclerviewLib = [
-            base_recyclerview: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.26'
+            base_recyclerview: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.1'
     ]
     baseRecyclerviewDeps = [
             baseRecyclerviewLib.values()

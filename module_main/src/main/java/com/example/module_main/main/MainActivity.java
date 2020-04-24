@@ -1,8 +1,8 @@
 package com.example.module_main.main;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentPagerAdapter;
+
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
