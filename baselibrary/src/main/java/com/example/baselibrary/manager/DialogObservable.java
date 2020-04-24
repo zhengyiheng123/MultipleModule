@@ -7,6 +7,10 @@ import com.example.baselibrary.utils.SPUtils;
 import com.example.baselibrary.utils.TimeUtils;
 import com.example.baselibrary.utils.Util;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+
 /**
  * Created by zyh
  * on 2020/4/23
@@ -16,6 +20,16 @@ public class DialogObservable extends BaseDialogObservable {
 
     public DialogObservable(int priority) {
         super(priority);
+    }
+
+    @Override
+    protected Observable<DialogData> createObservable() {
+        return Observable.create(new ObservableOnSubscribe<DialogData>() {
+            @Override
+            public void subscribe(ObservableEmitter<DialogData> e) throws Exception {
+                e.onNext(new DialogData("弹框消息" + mPriority));
+            }
+        });
     }
 
     @Override

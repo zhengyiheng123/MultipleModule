@@ -20,19 +20,12 @@ public abstract class BaseDialogObservable implements Comparable<DialogObservabl
     protected Observable<DialogData> mObservable;
     protected Activity mActivity;
 
-    public int getmPriority() {
-        return mPriority;
-    }
-
     public BaseDialogObservable(int priority) {
         mPriority = priority;
-        mObservable = Observable.create(new ObservableOnSubscribe<DialogData>() {
-            @Override
-            public void subscribe(ObservableEmitter<DialogData> e) throws Exception {
-                e.onNext(new DialogData("弹框" + mPriority));
-            }
-        });
+        mObservable = createObservable();
     }
+
+    protected abstract Observable<DialogData> createObservable();
 
     @Override
     public int compareTo(DialogObservable o) {
