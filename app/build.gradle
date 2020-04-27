@@ -36,7 +36,6 @@ dependencies {
 
     implementation project(':baselibrary')
     if (!isModule.toBoolean()) {
-        println("===================模块")
         //首页
         implementation project(':module_home')
         //登录、闪屏页
@@ -45,7 +44,6 @@ dependencies {
         implementation project(':module_mine')
     } else {
         //基础库
-        println("=======================基础库")
     }
 
     //arouter
